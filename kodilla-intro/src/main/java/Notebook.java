@@ -1,14 +1,26 @@
 public class Notebook {
 
 
-    int weight;
-    int price;
-    int year;
+    private int weight;
+    private int price;
+    private int year;
 
-    Notebook(int weight, int price, int year) {
+    public Notebook(int weight, int price, int year) {
         this.weight = weight;
         this.price = price;
         this.year = year;
+    }
+
+    public int getWeight() {
+        return weight;
+    }
+
+    public int getPrice() {
+        return price;
+    }
+
+    public int getYear() {
+        return year;
     }
 
     public void checkPrice() {

@@ -6,7 +6,6 @@ public class FirstClass {
 
 
         Notebook notebook = new Notebook(600, 1000, 2018);
-
         System.out.println(notebook.weight + "g" + " " + notebook.price + "zł");
         notebook.checkPrice();
         notebook.checkWeight();

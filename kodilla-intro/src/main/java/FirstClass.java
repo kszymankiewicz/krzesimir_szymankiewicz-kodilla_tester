@@ -22,6 +22,9 @@ public class FirstClass {
         Notebook businessLaptop = new Notebook(500, 900, 2017);
         check(businessLaptop);
 
+       LeapYear xYear = new LeapYear(3433);
+       xYear.checkLeapYear();
+
 
     }
     private static void check (Notebook notebook) {

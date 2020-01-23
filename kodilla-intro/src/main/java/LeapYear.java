@@ -1,10 +1,11 @@
 public class LeapYear {
     private int xYear;
-    boolean leap;
+    private boolean leap;
 
     public LeapYear(int xYear) {
         this.xYear = xYear;
     }
+
     public int getXYear() {
         return xYear;
     }

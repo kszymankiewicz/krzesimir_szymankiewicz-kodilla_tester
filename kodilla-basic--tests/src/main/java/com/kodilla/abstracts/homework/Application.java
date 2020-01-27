@@ -20,6 +20,23 @@ public class Application {
         smallSquare.circuit();
         smallSquare.surfaceArea();
 
+        System.out.println();
+        Scientist scientist = new Scientist();
+        scientist.personResponsibilities();
+
+        System.out.println();
+        Teacher teacher = new Teacher();
+        teacher.personResponsibilities();
+        teacher.getFirstName();
+
+        System.out.println();
+        Pilot pilot = new Pilot();
+        pilot.personResponsibilities();
+
+
+
+
+
 
     }
 }

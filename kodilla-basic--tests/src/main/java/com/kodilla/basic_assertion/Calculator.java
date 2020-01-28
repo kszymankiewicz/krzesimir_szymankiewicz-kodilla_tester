@@ -10,12 +10,13 @@ public class Calculator {
         return a - b;
     }
 
-    public int powerOfA (int a){
+    public int powerOfA(int a) {
 
-        return a * a ;
+        return a * a;
     }
-    public int powerOfB (int b){
 
-        return b * b ;
+    public int powerOfB(int b) {
+
+        return b * b;
     }
 }

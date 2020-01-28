@@ -13,7 +13,7 @@ public class SimpleArray {
 
         String game = games[3];
         int numberOfElements = games.length;
-        System.out.println(game);
+        System.out.println(games);
         System.out.println(numberOfElements);
 
 

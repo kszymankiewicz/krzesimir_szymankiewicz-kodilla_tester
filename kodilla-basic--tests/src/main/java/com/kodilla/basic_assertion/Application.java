@@ -33,7 +33,7 @@ public class Application {
         boolean correct3 = ResultChecker.assertEquals(25, powerOfAResult);
 
         if (correct3) {
-            System.out.println("Metoda powerOfA działa poprawnie dla liczb " + a );
+            System.out.println("Metoda powerOfA działa poprawnie dla liczb " + a);
         } else {
             System.out.println("Metoda powerOfA nie działa poprawnie dla liczb " + a);
         }
@@ -44,7 +44,7 @@ public class Application {
         boolean correct4 = ResultChecker.assertEquals(64, powerOfBResult);
 
         if (correct3) {
-            System.out.println("Metoda powerOfB działa poprawnie dla liczb " + b );
+            System.out.println("Metoda powerOfB działa poprawnie dla liczb " + b);
         } else {
             System.out.println("Metoda powerOfB nie działa poprawnie dla liczb " + b);
         }

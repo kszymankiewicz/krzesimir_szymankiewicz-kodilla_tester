@@ -23,7 +23,7 @@ public class ShapeUtils {
         else if (shape instanceof Square)
             return "Square";
         else
-            return "Uknow shape name";
+            return "Unknown shape name";
 
     }
 }

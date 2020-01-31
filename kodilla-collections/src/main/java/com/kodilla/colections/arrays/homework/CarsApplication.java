@@ -12,11 +12,12 @@ import java.util.Random;
 public class CarsApplication {
     public static void main(String[] args) {
         Car[] cars = new Car[15];
-        for (int n = 1; n < cars.length; n++)
+        for (int n = 1; n < cars.length; n++) {
             cars[n] = drawCar();
-        for ( Car car : cars)
+        }
+        for ( Car car : cars) {
             CarUtils.describeCar(car);
-
+        }
     }
 
     private static Car drawCar() {
@@ -24,11 +25,14 @@ public class CarsApplication {
         int drawnCarKind = random.nextInt(3);
         int increaseSpeed = random.nextInt() * 100 + 1;
 
-        if (drawnCarKind == 0)
+        if (drawnCarKind == 0) {
             return new Ford(increaseSpeed);
-        else if (drawnCarKind == 1)
+        }
+        else if (drawnCarKind == 1){
             return new Opel(increaseSpeed);
-        else
+        }
+        else {
             return new Volvo(increaseSpeed);
+        }
     }
 }

@@ -17,13 +17,17 @@ public class CarUtils {
     }
 
     private static String getCarName(Car car) {
-        if (car instanceof Ford)
+        if (car instanceof Ford) {
             return "Ford";
-        else if (car instanceof Opel)
+        }
+        else if (car instanceof Opel) {
             return "Opel";
-        else if (car instanceof Volvo)
+        }
+        else if (car instanceof Volvo) {
             return "Volvo";
-        else
+        }
+        else {
             return "Unknown car name";
+        }
     }
 }

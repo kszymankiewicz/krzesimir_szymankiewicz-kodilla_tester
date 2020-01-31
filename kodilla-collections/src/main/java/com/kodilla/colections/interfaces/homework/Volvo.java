@@ -22,4 +22,11 @@ public class Volvo implements Car {
 
             return  -25;
         }
+
+    @Override
+    public String toString() {
+        return "Volvo{" +
+                "speed=" + speed +
+                '}';
     }
+}

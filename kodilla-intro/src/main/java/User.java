@@ -55,7 +55,7 @@ public class User {
                 System.out.println(users[i].getName());
             }
         }
-        int youngestUser = 0;
+        int youngestUser = users[0].getAge();
         for (int i = 0; i < users.length; i++) {
             if (users[i].getAge() < youngestUser) {
                 youngestUser = users[i].getAge();

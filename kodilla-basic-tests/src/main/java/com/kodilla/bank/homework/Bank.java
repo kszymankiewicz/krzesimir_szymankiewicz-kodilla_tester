@@ -1,5 +1,8 @@
 package com.kodilla.bank.homework;
 
+import java.util.Arrays;
+import java.util.List;
+
 public class Bank {
     private CashMachine wallStreet;
     private CashMachine greenStreet;
@@ -9,7 +12,7 @@ public class Bank {
     private CashMachine payoutGreenStreet;
     private CashMachine payoutYellowStreet;
     private CashMachine payoutBlackStreet;
-
+    private List<Integer> x= Arrays.asList(20,50,100,200,500);
 
     public Bank(String name) {
 
@@ -24,7 +27,8 @@ public class Bank {
     }
 
     public void addWallStreet(int cash) {
-        if (cash > 20 || cash % 20 == 0 || cash % 50 == 0 || cash % 100 == 0 || cash % 200 == 0 || cash % 500 == 0) {
+
+        if ( x.contains(cash)) {
             this.wallStreet.add(cash);
         } else {
             System.out.println("za małe środki do wpłaty");

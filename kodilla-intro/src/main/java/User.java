@@ -29,8 +29,9 @@ public class User {
         User dawid = new User("Dawid", 24);
         User ernest = new User("Ernest", 56);
         User grazyna = new User("Grażyna", 100);
+        User anton = new User("Antoni", 56);
 
-        User[] users = {arek, bartek, czeslaw, dawid, ernest, grazyna};
+        User[] users = {arek, bartek, czeslaw, dawid, ernest, grazyna,anton};
         int sum = 0;
         for (int i = 0; i < users.length; i++) {
             sum += users[i].getAge();

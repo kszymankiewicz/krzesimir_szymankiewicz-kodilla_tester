@@ -6,10 +6,7 @@ public class RandomNumbers {
     public static void main(String[] args) {
 
         random();
-
-
     }
-
 
     public static void random() {
         List<Integer> numbers = new ArrayList<>();
@@ -21,7 +18,7 @@ public class RandomNumbers {
             numbers.add(temp);
             sum = sum + temp;
             result++;
-//            System.out.println(result);
+
         }
         min(numbers);
         max(numbers);

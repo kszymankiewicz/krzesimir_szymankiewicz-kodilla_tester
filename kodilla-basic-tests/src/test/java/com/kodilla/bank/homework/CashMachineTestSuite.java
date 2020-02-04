@@ -31,7 +31,19 @@ public class CashMachineTestSuite {
         cashMachine.add(500);
 
         assertEquals(1400,cashMachine.getSum());
+
+    }
+    @Test
+    public void shouldCalculateAverage(){
+        CashMachine cashMachine = new CashMachine();
+        cashMachine.add(200);
+        cashMachine.add(500);
+        cashMachine.add(500);
         assertEquals(400,cashMachine.getAverage(),0.001);
     }
+    @Test
+    public void shouldCalculateSizeTab() {
 
+
+    }
 }

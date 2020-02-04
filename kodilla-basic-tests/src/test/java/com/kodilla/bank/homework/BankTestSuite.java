@@ -20,7 +20,7 @@ public class BankTestSuite {
         bank.payoutWallStreet(-50);
         bank.payoutYellowStreet(-50);
 
-        bank.getAddSumCashMachine();
+
 
 
         int wallStreetSum = bank.getWallStreetSum();

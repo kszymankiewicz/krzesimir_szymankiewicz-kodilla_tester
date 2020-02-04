@@ -12,7 +12,7 @@ public class Bank {
     private CashMachine payoutGreenStreet;
     private CashMachine payoutYellowStreet;
     private CashMachine payoutBlackStreet;
-    private List<Integer> x= Arrays.asList(20,50,100,200,500);
+    private List<Integer> x = Arrays.asList(20, 50, 100, 200, 500);
 
     public Bank(String name) {
 
@@ -28,7 +28,7 @@ public class Bank {
 
     public void addWallStreet(int cash) {
 
-        if ( x.contains(cash)) {
+        if (cash > 20 || x.contains(cash)) {
             this.wallStreet.add(cash);
         } else {
             System.out.println("za małe środki do wpłaty");
@@ -36,16 +36,15 @@ public class Bank {
     }
 
     public void payoutWallStreet(int cash) {
-        if (cash < -20 || cash % 20 == 0 || cash % 50 == 0 || cash % 100 == 0 || cash % 200 == 0 || cash % 500 == 0) {
+        if (cash < -20 || x.contains(cash)) {
             this.payoutWallStreet.add(cash);
         } else {
             System.out.println("za małe środki do wpłaty");
         }
     }
 
-
     public void addGreenStreet(int cash) {
-        if (cash > 20 || cash % 20 == 0 || cash % 50 == 0 || cash % 100 == 0 || cash % 200 == 0 || cash % 500 == 0) {
+        if (cash > 20 || x.contains(cash)) {
             this.greenStreet.add(cash);
         } else {
             System.out.println("za małe środki do wpłaty");
@@ -53,7 +52,7 @@ public class Bank {
     }
 
     public void payoutGreenStreet(int cash) {
-        if (cash < -20 || cash % 20 == 0 || cash % 50 == 0 || cash % 100 == 0 || cash % 200 == 0 || cash % 500 == 0) {
+        if (cash > -20 || x.contains(cash)) {
             this.payoutGreenStreet.add(cash);
         } else {
             System.out.println("za małe środki do wpłaty");
@@ -61,7 +60,7 @@ public class Bank {
     }
 
     public void addYellowStreet(int cash) {
-        if (cash > 20 || cash % 20 == 0 || cash % 50 == 0 || cash % 100 == 0 || cash % 200 == 0 || cash % 500 == 0) {
+        if (cash > 20 || x.contains(cash)) {
             this.yellowStreet.add(cash);
         } else {
             System.out.println("za małe środki do wpłaty");
@@ -69,16 +68,15 @@ public class Bank {
     }
 
     public void payoutYellowStreet(int cash) {
-        if (cash < -20 || cash % 20 == 0 || cash % 50 == 0 || cash % 100 == 0 || cash % 200 == 0 || cash % 500 == 0) {
+        if (cash > -20 || x.contains(cash)) {
             this.payoutYellowStreet.add(cash);
         } else {
             System.out.println("za małe środki do wpłaty");
         }
     }
 
-
     public void addBlackStreet(int cash) {
-        if (cash > 20 || cash % 20 == 0 || cash % 50 == 0 || cash % 100 == 0 || cash % 200 == 0 || cash % 500 == 0) {
+        if (cash > 20 || x.contains(cash)) {
             this.blackStreet.add(cash);
         } else {
             System.out.println("za małe środki do wpłaty");
@@ -86,7 +84,7 @@ public class Bank {
     }
 
     public void payoutBlackStreet(int cash) {
-        if (cash < -20 || cash % 20 == 0 || cash % 50 == 0 || cash % 100 == 0 || cash % 200 == 0 || cash % 500 == 0) {
+        if (cash > -20 || x.contains(cash)) {
             this.payoutBlackStreet.add(cash);
         } else {
             System.out.println("za małe środki do wpłaty");
@@ -131,9 +129,8 @@ public class Bank {
                 this.payoutGreenStreet.getSum() + this.payoutYellowStreet.getSum() + this.payoutBlackStreet.getSum());
     }
 
-    public double getWallStreetAverage() {
-        return this.wallStreet.getAverage();
-    }
+    public double getWallStreetAverage() { return this.wallStreet.getAverage(); }
+
     public double getPayoutWallStreetAverage() {
         return this.payoutWallStreet.getAverage();
     }
@@ -141,6 +138,7 @@ public class Bank {
     public double getGreenStreetAverage() {
         return this.greenStreet.getAverage();
     }
+
     public double getPayoutGreenStreetAverage() {
         return this.payoutGreenStreet.getAverage();
     }
@@ -148,6 +146,7 @@ public class Bank {
     public double getYellowStreetAverage() {
         return this.yellowStreet.getAverage();
     }
+
     public double getPayoutYellowStreetAverage() {
         return this.payoutYellowStreet.getAverage();
     }
@@ -155,11 +154,13 @@ public class Bank {
     public double getBlackStreetAverage() {
         return this.blackStreet.getAverage();
     }
+
     public double getPayoutBlackStreetAverage() {
         return this.payoutBlackStreet.getAverage();
     }
 
-    public double getAverage() {
+
+    public double getPaymentAverage() {
         double sum = this.wallStreet.getAverage() + this.greenStreet.getAverage() + this.yellowStreet.getAverage() + this.blackStreet.getAverage();
         return sum / 4;
     }
@@ -169,6 +170,50 @@ public class Bank {
         return sum / 4;
 
     }
+
+    public int getWallStreetSize() {
+        return this.wallStreet.sizeTab();
+    }
+
+    public int getPayoutWallStreetSize() {
+        return this.payoutWallStreet.sizeTab();
+    }
+
+    public int getGreenStreetSize() {
+        return this.greenStreet.sizeTab();
+    }
+
+    public int getPayoutGreenStreetSize() {
+        return this.payoutGreenStreet.sizeTab();
+    }
+
+    public int getYellowStreetSize() {
+        return this.yellowStreet.sizeTab();
+    }
+
+    public int getPayoutYellowStreetSize() {
+        return this.payoutYellowStreet.sizeTab();
+    }
+
+    public int getBlackStreetSize() {
+        return this.blackStreet.sizeTab();
+    }
+
+    public int getPayoutBlackStreetSize() {
+        return this.payoutBlackStreet.sizeTab();
+    }
+
+
+    public int getPaymentSize() {
+        int size = this.getWallStreetSize() + this.getGreenStreetSize() + this.getYellowStreetSize() + this.getBlackStreetSize();
+        return size;
+    }
+
+    public int getPayoutSize() {
+        int size = this.getPayoutWallStreetSize() + this.getPayoutGreenStreetSize() + this.getPayoutYellowStreetSize() + this.getPayoutBlackStreetSize();
+        return size;
+    }
+
 }
 
 

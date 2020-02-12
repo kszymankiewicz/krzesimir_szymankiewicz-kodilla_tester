@@ -23,27 +23,59 @@ public class CashMachineTestSuite {
         assertEquals(4, values[0]);
         assertEquals(2, values[1]);
     }
+
     @Test
     public void shouldCalculateSum() {
         CashMachine cashMachine = new CashMachine();
         cashMachine.add(200);
         cashMachine.add(500);
         cashMachine.add(500);
-
-        assertEquals(1400,cashMachine.getSum());
+        assertEquals(1400, cashMachine.getSum());
 
     }
+
     @Test
-    public void shouldCalculateAverage(){
+    public void shouldCalculateAverage() {
         CashMachine cashMachine = new CashMachine();
         cashMachine.add(200);
         cashMachine.add(500);
         cashMachine.add(500);
-        assertEquals(400,cashMachine.getAverage(),0.001);
+        assertEquals(400, cashMachine.getAverage(), 0.001);
     }
+
     @Test
-    public void shouldCalculateSizeTab() {
+    public void shouldCalculateDepositCount() {
+        CashMachine cashMachine = new CashMachine();
+        cashMachine.add(200);
+        cashMachine.add(200);
+        cashMachine.add(-200);
+        assertEquals(2, cashMachine.depositCount());
+    }
 
+    @Test
+    public void shouldCalculateWithdrawCount() {
+        CashMachine cashMachine = new CashMachine();
+        cashMachine.add(200);
+        cashMachine.add(-200);
+        cashMachine.add(-200);
+        assertEquals(2, cashMachine.withdrawCounts());
+    }
 
+    @Test
+    public void shouldCalculateWithdrawSum() {
+        CashMachine cashMachine = new CashMachine();
+        cashMachine.add(-200);
+        cashMachine.add(200);
+        cashMachine.add(-200);
+        assertEquals(-400, cashMachine.withdrawSum());
+    }
+
+    @Test
+    public void shouldCalculateDepositSum() {
+        CashMachine cashMachine = new CashMachine();
+        cashMachine.add(-200);
+        cashMachine.add(200);
+        cashMachine.add(200);
+        assertEquals(400, cashMachine.depositSum());
     }
 }

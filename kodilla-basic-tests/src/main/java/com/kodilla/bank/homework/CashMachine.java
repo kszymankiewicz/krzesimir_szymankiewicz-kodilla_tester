@@ -43,10 +43,54 @@ public class CashMachine {
         return sum / this.values.length;
     }
 
-    public int sizeTab() {
+    public int depositCount() {
+        int count = 0;
+        for (int i = 0; i < this.values.length; i++) {
+            int value = this.values[i];
+            if (value > 0) {
+                count++;
+            }
 
-        return size;
+        }
+        return count;
+
     }
+
+    public int withdrawCounts() {
+        int count = 0;
+        for (int i = 0; i < this.values.length; i++) {
+
+            int value = this.values[i];
+            if (value < 0) {
+                count++;
+            }
+        }
+        return count;
+    }
+
+    public int depositSum() {
+        int sum = 0;
+        for (int i = 0; i < this.values.length; i++) {
+            int value = this.values[i];
+            if (value > 0) {
+                sum += value;
+
+            }
+
+        }
+        return sum;
+    }
+    public int withdrawSum() {
+        int sum = 0;
+        for (int i = 0; i < this.values.length; i++) {
+            int value = this.values[i];
+            if (value < 0) {
+                sum -= value;
+
+            }
+
+        }
+        return -sum;
+    }
+
 }
-
-

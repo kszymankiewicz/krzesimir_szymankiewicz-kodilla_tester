@@ -44,7 +44,7 @@ public class CalculatorTestSuite {
         ApplicationContext context = new AnnotationConfigApplicationContext("com.kodilla.spring.basic");
         Calculator calculator = context.getBean(Calculator.class);
         //when
-        double multiply = calculator.add(2.0, 3.0);
+        double multiply = calculator.multiply(2.0, 3.0);
         //then
         Assertions.assertEquals(6.0, multiply);
     }

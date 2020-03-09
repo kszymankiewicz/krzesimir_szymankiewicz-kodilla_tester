@@ -12,6 +12,4 @@ public class Clock {
             System.out.println("Time: ");
         }
 
-
-
 }

@@ -6,6 +6,7 @@ import org.springframework.stereotype.Component;
 @Component
 @Primary
 public class DHLNotificationService implements NotificationService{
+
     @Override
     public String success(String address) {
 

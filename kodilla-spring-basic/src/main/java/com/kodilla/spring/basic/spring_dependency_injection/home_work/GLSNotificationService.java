@@ -5,7 +5,6 @@ import org.springframework.stereotype.Component;
 @Component
 public class GLSNotificationService implements NotificationService {
 
-
     @Override
     public String success(String address) {
         return "Package delivered to: " + address;

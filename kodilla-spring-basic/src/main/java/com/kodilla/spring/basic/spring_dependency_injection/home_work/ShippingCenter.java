@@ -9,7 +9,6 @@ import javax.annotation.Resource;
 @Component
 public class ShippingCenter {
     @Resource(name = "DHLNotificationService")
-
     private DeliveryService deliveryService;
     private NotificationService notificationService;
 

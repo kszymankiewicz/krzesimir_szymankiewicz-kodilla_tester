@@ -10,6 +10,7 @@ public class DHLDeliveryService implements DeliveryService {
             System.out.println("Package too heavy");
             return false;
         }
+
         System.out.println("Delivering in progress...");
         return true;
     }

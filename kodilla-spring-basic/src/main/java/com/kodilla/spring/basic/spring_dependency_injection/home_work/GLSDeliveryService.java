@@ -4,6 +4,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class GLSDeliveryService implements DeliveryService {
+
     @Override
     public boolean deliverPackage(String address, double weight) {
         if (weight > 40) {

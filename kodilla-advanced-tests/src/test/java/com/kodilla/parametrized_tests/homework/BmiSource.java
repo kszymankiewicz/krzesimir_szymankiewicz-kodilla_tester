@@ -4,7 +4,7 @@ import org.junit.jupiter.params.provider.Arguments;
 
 import java.util.stream.Stream;
 
-public class BmiSources {
+public class BmiSource {
     static Stream<Arguments> providedData(){
         return Stream.of(
                 Arguments.of(1.75, 43.0, "Very severely underweight"),

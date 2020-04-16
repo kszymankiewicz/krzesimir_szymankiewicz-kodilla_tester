@@ -1,12 +1,12 @@
 package com.kodilla.soap.library;
-
-
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+
+
 @SpringBootApplication
-public class BookSoapApplication {
+public class SoapLibraryApplication {
     public static void main(String[] args) {
-        SpringApplication.run(BookSoapApplication.class, args);
+        SpringApplication.run(SoapLibraryApplication.class, args);
     }
 }

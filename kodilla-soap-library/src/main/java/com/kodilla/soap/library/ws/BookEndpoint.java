@@ -1,6 +1,8 @@
-package com.kodilla.soap.library.wsb;
+package com.kodilla.soap.library.ws;
 
 
+import com.kodilla.courses.soap.library.GetBookRequest;
+import com.kodilla.courses.soap.library.GetBookResponse;
 import com.kodilla.soap.library.repository.BooksRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ws.server.endpoint.annotation.Endpoint;
@@ -23,7 +25,7 @@ public class BookEndpoint {
     @ResponsePayload
     public GetBookResponse getBook(@RequestPayload GetBookRequest request) {
         GetBookResponse response = new GetBookResponse();
-        response.setBook(booksRepository.findBook(request.getSignatureNumber()));
+        response.setBook(booksRepository.findBook(request.getSignature()));
         return response;
     }
 }

@@ -1,4 +1,4 @@
-package com.kodilla.soap.library.wsb;
+package com.kodilla.soap.library.ws;
 
 import org.springframework.boot.web.servlet.ServletRegistrationBean;
 import org.springframework.context.ApplicationContext;
@@ -14,27 +14,27 @@ import org.springframework.xml.xsd.XsdSchema;
 
 @EnableWs
 @Configuration
-public class SoapWebService extends WsConfigurerAdapter {
+public class WebServiceConfig extends WsConfigurerAdapter {
     @Bean
     public ServletRegistrationBean messageDispatcherServlet(ApplicationContext applicationContext) {
         MessageDispatcherServlet servlet = new MessageDispatcherServlet();
         servlet.setApplicationContext(applicationContext);
         servlet.setTransformWsdlLocations(true);
-        return new ServletRegistrationBean(servlet, "/wsb/*");
+        return new ServletRegistrationBean(servlet, "/ws/*");
     }
 
     @Bean(name = "books")
     public DefaultWsdl11Definition defaultWsdl11Definition(XsdSchema booksSchema) {
         DefaultWsdl11Definition wsdl11Definition = new DefaultWsdl11Definition();
         wsdl11Definition.setPortTypeName("BooksPort");
-        wsdl11Definition.setLocationUri("/wsb");
-        wsdl11Definition.setTargetNamespace("http://kodilla.com/courses/soap/library");
+        wsdl11Definition.setLocationUri("/ws");
+        wsdl11Definition.setTargetNamespace("http://kodilla.com/books/soap");
         wsdl11Definition.setSchema(booksSchema);
         return wsdl11Definition;
     }
 
     @Bean
     public XsdSchema booksSchema() {
-        return new SimpleXsdSchema(new ClassPathResource("kodilla-homework.xsd"));
+        return new SimpleXsdSchema(new ClassPathResource("library.xsd"));
     }
 }

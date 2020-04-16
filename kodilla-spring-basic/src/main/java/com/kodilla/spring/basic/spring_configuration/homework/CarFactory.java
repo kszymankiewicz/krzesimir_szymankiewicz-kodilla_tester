@@ -3,30 +3,36 @@ package com.kodilla.spring.basic.spring_configuration.homework;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
 
 import java.time.LocalTime;
 
 @Configuration
 public class CarFactory {
-    @Bean
+
+    private String season;
+    private LocalTime time;
+
     public Car createSedan() {
         return new Sedan();
     }
 
-    @Bean
+
     public Car createSUV() {
         return new SUV();
     }
 
-    @Bean
+
     public Car createCabrio() {
         return new Cabrio();
     }
 
-
-
-    public Car getCar(String season, LocalTime time) {
-        Car car = getCar(season);
+@Bean
+  public Car getCar() {
+    this.season = season;
+    this.time = time;
+    Car car = getCar(season);
 
         if (time.isAfter(LocalTime.of(6, 0)) && time.isBefore(LocalTime.of(20, 0))) {
             car.setLight(false);

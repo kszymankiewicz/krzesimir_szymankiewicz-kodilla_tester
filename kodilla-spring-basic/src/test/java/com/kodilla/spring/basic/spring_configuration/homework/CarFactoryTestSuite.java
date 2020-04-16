@@ -1,49 +1,74 @@
 package com.kodilla.spring.basic.spring_configuration.homework;
 
 
-
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
+import java.time.LocalTime;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 @SpringBootTest
-class CarFactoryTestSuite {
-
-    //Given
-    ApplicationContext context = new AnnotationConfigApplicationContext("com.kodilla.spring");
+public class CarFactoryTestSuite {
 
     @Test
-    public void testSedanCreated() {
-        //given
-        Sedan sedan = context.getBean(Sedan.class);
+    public void shouldGetTheCarTypeCabrio() {
+        //Given
+        ApplicationContext context = new AnnotationConfigApplicationContext("com.kodilla.spring.basic.spring_configuration.homework");
+        Car cabrio = (Car) context.getBean("getCar");
         //when
-        String car = sedan.getCarType();
+        String result = cabrio.getCarType("Summer");
         //then
-        Assertions.assertEquals("Sedan",car);
+        assertEquals("Cabrio", result);
+
     }
 
     @Test
-    public void testSuvCreated() {
-        //given
-        SUV suv = context.getBean(SUV.class);
+    public void shouldGetTheCarTypeSuv() {
+        //Given
+        ApplicationContext context = new AnnotationConfigApplicationContext("com.kodilla.spring.basic.spring_configuration.homework");
+        Car suv = (Car) context.getBean("getCar");
         //when
-        String car = suv.getCarType();
+        String result = suv.getCarType("Winter");
         //then
-        Assertions.assertEquals("SUV",car);
+        assertEquals("SUV", result);
+
     }
 
     @Test
-    public void testCabrioCreated() {
-        //given
-        Cabrio cabrio = context.getBean(Cabrio.class);
+    public void shouldGetTheCarTypeSedan() {
+        //Given
+        ApplicationContext context = new AnnotationConfigApplicationContext("com.kodilla.spring.basic.spring_configuration.homework");
+        Car sedan = (Car) context.getBean("getCar");
         //when
-        String car = cabrio.getCarType();
+        String result = sedan.getCarType("Summer");
         //then
-        Assertions.assertEquals("Cabrio",car);
-
+        assertEquals("Sedan", result);
 
     }
 
+    @Test
+    public void shouldTurnLightsOffBetween6And20() {
+        //given
+        ApplicationContext context = new AnnotationConfigApplicationContext("com.kodilla.spring.basic.spring_configuration.homework");
+        Car car = (Car) context.getBean("getCar");
+        //when
+        boolean result = car.hasHeadlightsTurnedOn(LocalTime.of(2, 15));
+        Assertions.assertEquals(false, result);
+
+    }
+
+    @Test
+    public void shouldTurnLightsOffBetween20And6() {
+        //given
+        ApplicationContext context = new AnnotationConfigApplicationContext("com.kodilla.spring.basic.spring_configuration.homework");
+        Car car = (Car) context.getBean("getCar");
+        //when
+        boolean result = car.hasHeadlightsTurnedOn(LocalTime.of(22, 15));
+        Assertions.assertEquals(true, result);
+
+    }
 }

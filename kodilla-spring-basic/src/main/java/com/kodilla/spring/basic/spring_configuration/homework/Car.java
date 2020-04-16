@@ -1,11 +1,12 @@
 package com.kodilla.spring.basic.spring_configuration.homework;
 
-import com.kodilla.spring.basic.springs_scopes.homework.Clock;
-import sun.security.krb5.internal.crypto.ArcFourHmacEType;
+import java.time.LocalTime;
 
 public interface Car {
 
-    boolean hasHeadlightsTurnedOn();
-    String getCarType();
+    boolean hasHeadlightsTurnedOn(LocalTime of);
+    String getCarType(String season);
     boolean setLight(boolean value);
+
+
 }

@@ -1,10 +1,13 @@
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://kodilla.com/courses/soap"
-           targetNamespace="http://kodilla.com/courses/soap" elementFormDefault="qualified">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:tns="http://kodilla.com/books/soap/library"
+           targetNamespace="http://kodilla.com/books/soap/library"
+           elementFormDefault="qualified">
+
 
     <xs:element name="getBookRequest">
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="signatureNumber" type="xs:string"/>
+                <xs:element name="signature" type="xs:string"/>
             </xs:sequence>
         </xs:complexType>
     </xs:element>
@@ -19,15 +22,14 @@
 
     <xs:complexType name="book">
         <xs:sequence>
-            <xs:element name="signatureNumber" type="xs:string"/>
+            <xs:element name="signature" type="xs:string"/>
             <xs:element name="title" type="xs:string"/>
             <xs:element name="author" type="xs:string"/>
-            <xs:element name="yearEdition" type="xs:int"/>
-            <xs:element name="literatureSort" type="tns:literatureSort"/>
+            <xs:element name="genre" type="tns:literaryGenre"/>
         </xs:sequence>
     </xs:complexType>
 
-    <xs:simpleType name="literatureSort">
+    <xs:simpleType name="literaryGenre">
         <xs:restriction base="xs:string">
             <xs:enumeration value="SCI-FI"/>
             <xs:enumeration value="FANTASY"/>

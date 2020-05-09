@@ -12,7 +12,7 @@ import org.springframework.ws.server.endpoint.annotation.ResponsePayload;
 
 @Endpoint
 public class BookEndpoint {
-    private static final String NAMESPACE_URI = "http://kodilla.com/books/soap";
+    private static final String NAMESPACE_URI = "http://kodilla.com/books/soap/library";
 
     private BooksRepository booksRepository;
 
